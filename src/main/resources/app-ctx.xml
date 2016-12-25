@@ -4,8 +4,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="dbConfig" class="pl.tomihome.ciscowebpowermeter.DbConfig">
-		<property name="fileName" value="power.db" />
-		<property name="user" value="tomi" />
-		<property name="password" value="sosna21" />
+		<property name="pathToDbFile" value="DB FILE" />
 	</bean>
+	
+	<bean id="sshConfig" class="pl.tomihome.ciscowebpowermeter.SshConfig" scope="prototype">
+		<property name="host" value="IP"/>
+		<property name="port" value="PORT"/>
+		<property name="sshUser" value="USER"/>
+		<property name="pathToKey" value="KEY"/>
+		<property name="keyPass" value="PASS"/>
+		<property name="command" value="ifconfig eth0"/>
+	</bean>
+	
 </beans>
